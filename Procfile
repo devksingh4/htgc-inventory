@@ -1,0 +1,1 @@
+web: yarn pre-prod && yarn prod
