@@ -5,6 +5,14 @@
   "main": "index.js",
   "repository": "https://github.com/devksingh4/htgc-inventory",
   "author": "Dev Singh <dev@devksingh.com>",
+  "scripts": {
+    "build": "tsc",
+    "pre-prod": "tsc && yarn copy-assets",
+    "prod": "node --max_old_space_size=950 --gc_interval=100 ./built/src/index.js ",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "lint": "eslint src/ --ext .ts",
+    "copy-assets": "cp -r src/views/ built/src/"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/node": "^15.12.4",
