@@ -7,11 +7,12 @@
   "author": "Dev Singh <dev@devksingh.com>",
   "scripts": {
     "build": "tsc",
-    "pre-prod": "tsc && yarn copy-assets && mv ./built/index.js ./built/src/index.js && mv ./built/routes ./built/src/routes",
-    "prod": "node --max_old_space_size=950 --gc_interval=100 ./built/src/index.js ",
+    "pre-prod": "tsc && yarn copy-assets",
+    "prod": "node --max_old_space_size=950 --gc_interval=100 ./built/index.js ",
     "dev": "HTTPS=false ts-node-dev --respawn --transpile-only ./src/index.ts",
     "lint": "eslint src/ --ext .ts",
-    "copy-assets": "cp -r src/views/ built/src/ && cp -r src/public/ built/src/"
+    "copy-assets": "cp -r src/views/ built/ && cp -r src/public/ built/",
+    "heroku": "yarn pre-prod && yarn prod"
   },
   "license": "MIT",
   "dependencies": {
