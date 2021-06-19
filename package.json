@@ -1,0 +1,19 @@
+{
+  "name": "htgc-inventory",
+  "version": "1.0.0",
+  "description": "HTGC inventory system",
+  "main": "index.js",
+  "repository": "https://github.com/devksingh4/htgc-inventory",
+  "author": "Dev Singh <dev@devksingh.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^15.12.4",
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "typescript": "^4.3.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.1.6"
+  }
+}
