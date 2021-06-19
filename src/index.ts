@@ -9,9 +9,9 @@ app.use(express.json({ extended: true, limit: '50mb' }))
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.disable('x-powered-by');
-app.set('views', path.join(__dirname, '/views'))
+app.set('views', path.join(__dirname, 'views/'))
 app.set('view engine', 'hbs')
-hbs.registerPartials(path.join(__dirname, "/views/partials"));
+hbs.registerPartials(path.join(__dirname, "views/partials"));
 app.set('trust proxy', 1);
 
 app.use(function (req, res, next) {
