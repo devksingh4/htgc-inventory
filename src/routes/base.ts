@@ -7,7 +7,7 @@ module.exports = (app) => {
       uuid: uuidv4(),
       groupLength: groups.length > 1,
       groups, 
-      units: ['box', 'kg', 'lb', 'g'],
+      units: ['boxes', 'kgs', 'lbs', 'g'],
       user: { picture: 'https://devksingh.com/images/me.jpg', name: 'Dev Singh' } 
     })
   })

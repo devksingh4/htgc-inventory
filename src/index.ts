@@ -16,11 +16,13 @@ app.set('trust proxy', 1);
 
 app.use(function (req, res, next) {
   res.set('X-Frame-Options', 'DENY')
+  req.next = next;
   next();
 })
 
 //routes
 require('./routes/base')(app);
+require('./routes/view-inventory')(app);
 
 // handle 404
 app.use(function (req, res) {

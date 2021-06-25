@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+{{> head title="HTGC Inventory"}}
+{{> navbar currentActive="view-inventory"}}
+<br><br>
+<br><br>
+<p hidden id="currentPage">{{split}}</p>
+<div class="container-lg">
+  <h1 style="text-align: center;">View Inventory</h1>
+  <br><br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Boxed Quantity (Unit)</th>
+        <th>Loose Quantity (Unit)</th>
+        {{#if groupLength}}
+          <th>Category</th>
+        {{/if}}
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each entries}}
+      <tr id="{{id}}">
+        <td>{{description}}</td>
+        <td>{{quantity-boxed}} {{quantity-boxed-unit}}</td>
+        <td>{{quantity-loose}} {{quantity-loose-unit}}</td>
+        {{#if ../groupLength}}
+          <td>{{category}}</td>
+        {{/if}}
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <nav aria-label="Inventory split" class="d-flex justify-content-center">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Select Page</a>
+      </li>
+      {{#each splits}}
+        <li class="page-item" id="{{this}}-tab"><a class="page-link" href="?split={{this}}">{{this}}</a></li>
+      {{/each}}
+    </ul>
+  </nav>
+</div>
+<script>
+  document.getElementById(document.getElementById('currentPage').innerHTML + '-tab').classList.add('active')
+</script>

@@ -24,18 +24,18 @@
     </div>
     <br>
     <div class="input-group mb-3">
-      <input type="number" min="1" class="form-control" placeholder="Quantity" aria-label="Quantity" required>
+      <input type="number" min="0" class="form-control" placeholder="Quantity" name="quantity-boxed" id="quantity-boxed" aria-label="Quantity" required>
       <select class="form-select" aria-label="Unit">
-        <option selected disabled>Unit</option>
+        <option selected disabled required>Unit</option>
         {{#each units}}
         <option value="{{this}}">{{this}}</option>
         {{/each}}
       </select>
     </div>
     <div class="input-group mb-3">
-      <input type="number" min="1" class="form-control" placeholder="Loose Quantity" aria-label="Quantity" required>
+      <input type="number" min="0" class="form-control" placeholder="Loose Quantity" name="quantity-loose" id="quantity-loose" aria-label="Quantity" required>
       <select class="form-select" aria-label="Unit">
-        <option selected disabled>Unit</option>
+        <option selected disabled required>Unit</option>
         {{#each units}}
         <option value="{{this}}">{{this}}</option>
         {{/each}}
