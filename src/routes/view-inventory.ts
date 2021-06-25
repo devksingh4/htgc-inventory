@@ -1,4 +1,4 @@
-function paginateData(data: Array<Record<string, any>>, chunk: number = 5) {
+function paginateData(data: Array<Record<string, any>>, chunk: number = 15) {
   if (data.length <= chunk) return [data];
   let chunkedArray: Array<Record<string, any>> = [];
   let start = 0;
