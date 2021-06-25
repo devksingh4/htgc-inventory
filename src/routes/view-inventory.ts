@@ -41,7 +41,7 @@ module.exports = (app) => {
     res.render('view-inventory', {
       entries: paginatedData[split - 1],
       user: { picture: 'https://devksingh.com/images/me.jpg', name: 'Dev Singh' },
-      splits: Array.from({length: paginatedData.length + 1}, (x, i) => i).splice(1, paginateData.length + 1),
+      splits: Array.from({length: paginatedData.length + 1}, (x, i) => i).splice(1, paginatedData.length + 1),
       split,
       groups,
       groupLength: groups.length > 1,
